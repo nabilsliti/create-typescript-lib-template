@@ -1,6 +1,6 @@
 {
   "name": "create-typescript-lib-template",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A tool that gives you a simple way to create a typescript library template",
   "bin": {
     "tslib": "./src/tslib.js"
