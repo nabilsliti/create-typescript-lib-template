@@ -1,0 +1,60 @@
+{
+  "name": "create-typescript-lib-template",
+  "version": "0.0.1",
+  "description": "A tool that gives you a simple way to create a typescript library template",
+  "bin": {
+    "tslib": "./src/tslib.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabilsliti/create-typescript-lib-template.git"
+  },
+  "scripts": {
+    "changes": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint": "eslint ./src/",
+    "lint.fix": "eslint ./src/ --fix",
+    "release": "node release.js"
+  },
+  "keywords": [
+    "plop",
+    "build",
+    "typescript",
+    "library",
+    "lib",
+    "generate",
+    "template",
+    "ts-template",
+    "template-ts",
+    "cli",
+    "node",
+    "generator",
+    "scaffold",
+    "scaffolding",
+    "tool"
+  ],
+  "author": {
+    "name": "Nabil Sliti",
+    "email": "nabil.sliti.pro@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nabilsliti/create-typescript-lib-template/issues"
+  },
+  "homepage": "https://github.com/nabilsliti/create-typescript-lib-template#readme",
+  "dependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^2.4.2",
+    "inquirer-directory": "^2.2.0",
+    "liftoff": "^2.2.0",
+    "minimist": "^1.2.0",
+    "node-plop": "^0.26.3",
+    "shelljs": "^0.8.5"
+  },
+  "devDependencies": {
+    "conventional-changelog-cli": "^4.1.0",
+    "enquirer": "^2.4.1",
+    "eslint": "^8.51.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1"
+  }
+}
