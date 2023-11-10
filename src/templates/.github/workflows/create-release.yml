@@ -1,0 +1,40 @@
+name: Create release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get the tag name
+        id: tag
+        run: echo "::set-output name=tag::$(echo $GITHUB_REF | sed -n 's/refs\/tags\///p')"
+
+      - name: Create a Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          files: dist/*
+          tag_name: ${{ tagName}}
+          release_name: release ${{ tagName }}
+          body: Release notes for ${{ tagName }}
+        env:
+          GITHUB_TOKEN: ${{ githubToken }}
+
+      - name: Publish Release
+        run: echo "Released ${{ uploadUrl }}"
